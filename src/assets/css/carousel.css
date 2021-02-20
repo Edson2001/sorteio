@@ -1,16 +1,9 @@
-.top{
-    width: 100%;
-    box-shadow: 0 6px 6px rgba(0,0,0,.4);
-    height: 500px;
-    background: url('https://i1.wp.com/thefutureoftheforce.com/wp-content/uploads/2020/08/Zack-Snyders-Justice-League.jpg?fit=3200%2C1800&ssl=1');
-    background-size: cover;
-   
-  }
+
   
   
   .carousel {
     height: 250px;
-    width: 100%;
+    width: 97%;
     position: relative;
   }
   .carousel .switchLeft,
@@ -30,15 +23,23 @@
   
   .carousel .switchLeft {
     position: absolute;
-    left: -50px;
+    left: -2px;
+    transition: .7s ease;
   }
   
   .carousel .switchRight {
     position: absolute;
-  
-    right: -50px;
+    transition: .7s ease;
+    right: -10px;
   }
-  
+  .switchRight:hover, .switchLeft:hover{
+    background: #262626;
+    opacity: 0.9;
+    height: 212px;
+    overflow: hidden;
+    margin-top: 30px;
+    
+  }
   .carouselbox {
     height: 250px;
     width: auto;
@@ -69,10 +70,7 @@
     transform: scale(1.4);
     z-index: 5;
   }
-  .limite{
-    width: 1350px;
-    margin: 0 auto;
-  }
+ 
   .title{
     display: block;
     color: white;

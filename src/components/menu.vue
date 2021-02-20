@@ -1,9 +1,9 @@
 <template>
     <div>
         <div class="menu">
-            <a href="" class="logo">
+            <router-link to="/" class="logo">
                 <h1>CollFlix</h1>
-            </a>
+            </router-link>
             <nav>
                 <ul>
                     <li>
@@ -14,6 +14,11 @@
                     </li>
                     <li>
                         <a href="">Minha Lista</a>
+                    </li>
+                    <li>
+                        <router-link to="/query">
+                            <i class="icofont-search"></i>
+                        </router-link>
                     </li>
                     <li>
                         <a href="">

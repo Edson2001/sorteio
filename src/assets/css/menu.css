@@ -13,6 +13,7 @@ ul, li {
     flex-wrap: wrap;
     align-items: center;
     padding: 0;
+    width: 100%;
 }
 .menu nav ul{
     display: flex;
