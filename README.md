@@ -6,3 +6,7 @@
 
 
 Muito simples para ser adaptado, feito com Vue.js
+
+Para ver o projeto visite: https://collflix.edson2001.vercel.app
+
+O projeto está aberto para contribuições.
