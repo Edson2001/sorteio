@@ -96,8 +96,10 @@ export default {
         document.querySelector(".c"+this.typeDocument).insertAdjacentHTML(
           "beforeend",
           ` <div class="">
+              <router-link to="/find?id=${cur.id}">
+                <img class="img-${index} slider-img" src="http://image.tmdb.org/t/p/w185/${cur.poster_path}" />
+              </router-link >
               
-              <img class="img-${index} slider-img" src="http://image.tmdb.org/t/p/w185/${cur.poster_path}" />
             
               
             </div>
