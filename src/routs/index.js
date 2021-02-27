@@ -26,8 +26,9 @@ const routes =   [
         component: Query
     },
     {
-        path: '/find',
-        component: Find
+        path: '/find/:id',
+        component: Find,
+        name: 'find.id'
     }
 
 ];

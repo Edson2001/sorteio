@@ -57,6 +57,7 @@
 
                     
                     <div>
+  <iframe width="560" height="315" :src="'https://www.youtube.com/embed/'+video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         <h4>Elenco</h4>
                     </div>
                     
@@ -65,7 +66,7 @@
         </div>
 
         <div class="container">
-            <carousel :typeDocument="1"   :url='"https://api.themoviedb.org/3/movie/122/recommendations?api_key=5a1939e7ee4fd5d2be953c58f1787222&language=pt-BR&page=1"' :description="'Filmes recomendados'"></carousel>
+            <carousel :typeDocument="1"   :url='"https://api.themoviedb.org/3/movie/"+id_movie+"/recommendations?api_key=5a1939e7ee4fd5d2be953c58f1787222&language=pt-BR&page=1"' :description="'Filmes recomendados'"></carousel>
         </div>
 
         <footer>
@@ -83,8 +84,9 @@
 <script>
 import menuVue from '../components/menu.vue'
 import carousel from '../components/carousel.vue'
-import '../../src/assets/css/find.css'
+
 import '../assets/css/query.css'
+import '../../src/assets/css/find.css'
 import axios from 'axios'
 export default {
     name: 'find',
@@ -92,23 +94,40 @@ export default {
 
     data(){
         return{
-
+            query: '',
             movie: '',
+            id_movie: '',
+            video: ''
         }
     },
 
     created(){
-        this.find_movie(122)
-  
+        
+        if(this.$router.history.current.params.id == '' || this.$router.history.current.params.id == null){
+            this.id_movie = 233
+        }else{
+            this.id_movie = this.$router.history.current.params.id
+        }
+        
+        
+        this.find_movie(this.id_movie)
+        axios.get('https://api.themoviedb.org/3/movie/'+this.id_movie+'/videos?api_key=5a1939e7ee4fd5d2be953c58f1787222&language=en-US')
+        .then((response=>{
+            this.video =   response.data.results[0].key
+            
+        }
+        
+        ))
     },
+
 
     methods: {
 
         find_movie(id){
-
+            console.log(id)
             axios.get('https://api.themoviedb.org/3/movie/'+id+'?api_key=5a1939e7ee4fd5d2be953c58f1787222&language=pt-BR')
             .then(response=>{
-                console.log(response.data)
+                
                 this.movie = response.data
             })
 

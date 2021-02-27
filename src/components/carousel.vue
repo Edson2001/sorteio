@@ -9,7 +9,12 @@
             </div>
 
             <div :class="'carouselbox c'+ this.typeDocument"  >
-            
+              <div @click="view_movie(item.id)" class="" v-for="(item, index) in info" :key="index">
+                
+                <img :class="'img-'+index +' '+ 'slider-img'" :src="'http://image.tmdb.org/t/p/w185/'+item.poster_path" />
+                
+              </div>
+              
             </div>
             <a class="switchLeft sliderButton" @click="sliderScrollLeft()"><i class="icofont-rounded-left"></i></a>
             <a class="switchRight sliderButton" @click="sliderScrollRight()"><i class="icofont-rounded-right"></i></a>
@@ -19,9 +24,11 @@
 <script>
 import axios from 'axios'
 import '../assets/css/carousel.css'
+
+
 export default {
     name: 'Carousel',
-
+ 
     props: ['url', 'typeDocument', 'description'],
     data(){
     return{
@@ -31,6 +38,7 @@ export default {
        ImagePadding: 20,
        scrollAmount: 0,
        title: '',
+       info: ''
        //urlQuery: 'https://api.themoviedb.org/3/search/movie?api_key=5a1939e7ee4fd5d2be953c58f1787222&language=en-US&query=The%20Batman&page=1&include_adult=true'
     }
   },
@@ -46,10 +54,14 @@ export default {
 
     this.sliders = document.querySelector(".c"+this.typeDocument)
     
-     this.showMoviesData();
+    this.get_movies();
   },
 
   methods:{
+
+    view_movie(id){
+      this.$router.push({name: 'find.id', params: { id: id }})
+    },
     
     sliderScrollLeft() {
       
@@ -81,8 +93,19 @@ export default {
   },
 
 
+  async get_movies(){
 
-    async  showMoviesData() {
+    await axios.get(this.url).then(response=>{
+      this.info = response.data.results
+    })
+
+    this.scrollPerClick = document.querySelector(".img-1").clientWidth + 20;
+
+  }
+
+
+
+    /*async  showMoviesData() {
    
       var result = await axios.get(
         this.url
@@ -99,9 +122,6 @@ export default {
               <router-link to="/find?id=${cur.id}">
                 <img class="img-${index} slider-img" src="http://image.tmdb.org/t/p/w185/${cur.poster_path}" />
               </router-link >
-              
-            
-              
             </div>
           `
         );
@@ -109,7 +129,7 @@ export default {
       });
 
       this.scrollPerClick = document.querySelector(".img-1").clientWidth + 20;
-    }
+    }*/
 
   }
 }
