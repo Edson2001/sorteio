@@ -7,6 +7,8 @@ It is a template of a streaming platform, of films and series, made with vue js,
 
 Very simple to adapt, made with Vue.js
 
+![Screenshot](https://github.com/Edson2001/collflix/blob/master/src/assets/images/mv.png)
+
 To see the project visit: https://collflix.vercel.app
 
 How to use:
