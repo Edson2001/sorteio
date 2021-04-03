@@ -27,7 +27,7 @@ Download the dependencies:
 Launch application
 
 ```
-  npm start
+  npm run serve
 ```
 
 The project is open for contributions.
