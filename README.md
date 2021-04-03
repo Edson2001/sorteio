@@ -12,6 +12,11 @@ Very simple to adapt, made with Vue.js
 - [Search for films and series](#https://collflix.vercel.app/query)
 - [View trailers, movie synopsis or series](#https://collflix.vercel.app/find/791373)
 
+## Technologies used
+
+- [JS - Vue.js](#https://collflix.vercel.app/query)
+- [HTML - CSS](#https://collflix.vercel.app/find/791373)
+
 To see the project visit: https://collflix.vercel.app
 
 How to use:
