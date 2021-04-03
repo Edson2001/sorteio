@@ -9,7 +9,25 @@ Very simple to adapt, made with Vue.js
 
 To see the project visit: https://collflix.vercel.app
 
+How to use:
+
+Clone the project
+```
+  git clone https://github.com/Edson2001/collflix.git
+```
+
+Download the dependencies:
+
+```
+  cd collflix
+  npm install 
+  
+```
+
+Launch application
+
+```
+  npm start
+```
 
 The project is open for contributions.
-
-
