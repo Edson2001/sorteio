@@ -20,8 +20,8 @@ Download the dependencies:
 
 ```
   cd collflix
-  npm install 
   
+  npm install 
 ```
 
 Launch application
