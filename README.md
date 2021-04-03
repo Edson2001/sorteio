@@ -9,6 +9,11 @@ Very simple to adapt, made with Vue.js
 
 ![Screenshot](https://github.com/Edson2001/collflix/blob/master/src/assets/images/mv.png)
 
+## Current features
+
+- [Search for films and series](#https://collflix.vercel.app/query)
+- [View trailers, movie synopsis or series](#https://collflix.vercel.app/find/791373)
+
 To see the project visit: https://collflix.vercel.app
 
 How to use:
