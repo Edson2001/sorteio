@@ -16,6 +16,7 @@ Very simple to adapt, made with Vue.js
 
 - [JS - Vue.js](#https://collflix.vercel.app/query)
 - [HTML - CSS](#https://collflix.vercel.app/find/791373)
+- [API - TMDB]
 
 To see the project visit: https://collflix.vercel.app
 
