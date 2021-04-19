@@ -25,7 +25,6 @@ Clone the project
 ```
   git clone https://github.com/Edson2001/collflix.git
 ```
-
 Download the dependencies:
 
 ```
