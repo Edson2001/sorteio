@@ -38,5 +38,4 @@ Launch application
 ```
   npm run serve
 ```
-
 The project is open for contributions.
