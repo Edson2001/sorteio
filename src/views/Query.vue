@@ -23,6 +23,7 @@
                 </div>
             </div>
         </div>
+        <footerVueVue />
     </div>
 </template>
 
