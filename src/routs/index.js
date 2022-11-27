@@ -1,37 +1,32 @@
 import vue from 'vue'
 import vueRoute from 'vue-router'
 
-
-
-//views
-
-import Home from '../views/Home.vue'
-import Query from '../views/Query.vue'
-import Find from '../views/Find.vue'
-
 vue.use(vueRoute)
-
 
 const routes =   [
     {
         path: '/',
-        component: Home
+        component: ()=> import('../views/Home.vue'),
+        meta: {layout: 'defaultLayut'}
     },
     {
         path: '/home',
-        component: Home
+        redirect: '/',
+        meta: {layout: 'defaultLayut'}
     },
     {
         path: '/query',
-        component: Query
+        component: ()=> import('../views/Query.vue'),
+        meta: {layout: 'otherLayout'}
     },
     {
         path: '/find/:id',
-        component: Find,
+        component: ()=> import('../views/Find.vue'),
+        meta: {layout: 'defaultLayut'},
         name: 'find.id'
     }
 
-];
+]
 
 export default new vueRoute({
     mode: 'history',

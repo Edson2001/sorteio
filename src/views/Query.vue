@@ -1,8 +1,5 @@
 <template>
     <div>
-
-        <menu-vue></menu-vue>
-
         <div class="top" >
            
 
@@ -50,13 +47,10 @@
 
 
 <script>
-import menuVue from '../components/menu.vue'
 import '../assets/css/query.css'
 import axios from 'axios'
 export default {
     name: 'Query',
-    components: {menuVue},
-
     data(){
         return{
             query: '',

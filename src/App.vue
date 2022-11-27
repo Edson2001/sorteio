@@ -1,18 +1,15 @@
 <template>
   <div id="app" >
-
-
-    <router-view></router-view>
-
-    
-    
+    <app-layout />
   </div>
 </template>
 
 <script>
 
-
+import appLayout from './layout/appLayout.vue'
 
 export default {
   name: 'App',
+  components: {appLayout}
 }
+</script>

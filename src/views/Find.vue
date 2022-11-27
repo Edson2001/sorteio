@@ -1,9 +1,6 @@
 <template>
     
      <div>
-
-        <menu-vue></menu-vue>
-
         <div class="top" >
            
 
@@ -82,7 +79,6 @@
 
 
 <script>
-import menuVue from '../components/menu.vue'
 import carousel from '../components/carousel.vue'
 
 import '../assets/css/query.css'
@@ -90,7 +86,7 @@ import '../../src/assets/css/find.css'
 import axios from 'axios'
 export default {
     name: 'find',
-    components: {menuVue, carousel},
+    components: {carousel},
 
     data(){
         return{

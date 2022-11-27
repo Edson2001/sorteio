@@ -7,13 +7,13 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="">Séries</a>
+                        <router-link to="/query">Séries</router-link>
                     </li>
                     <li>
-                        <a href="">Filmes</a>
+                        <router-link to="/query">Filmes</router-link>
                     </li>
                     <li>
-                        <a href="">Minha Lista</a>
+                        <router-link to="/query">Minha Lista</router-link>
                     </li>
                     <li>
                         <router-link to="/query">
@@ -21,10 +21,10 @@
                         </router-link>
                     </li>
                     <li>
-                        <a href="">
+                        <router-link to="/">
                             <img src="https://avatars.githubusercontent.com/u/39365797?s=460&u=4ebebc0bce1839222a2ce180b0b4aa0e13d45b1a&v=4" alt="" srcset="">
                             <span>Dos Santos</span>
-                        </a>
+                        </router-link>
                     </li>
                 </ul>
             </nav>
@@ -35,6 +35,6 @@
 <script>
 import '../assets/css/menu.css'
 export default {
-    name: 'menuVue'
+    name: "MenuVue"
 }
 </script>

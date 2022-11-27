@@ -1,8 +1,6 @@
 <template>
   <div id="app" >
 
-    <menu-vue></menu-vue>
-
     <div class="top">
 
     </div>
@@ -65,16 +63,13 @@
 
 <script>
 import '../assets/css/home.css'
-
-
-import menuVue from '../components/menu.vue'
 import carousel from '../components/carousel.vue'
 
 import axios from 'axios'
 
 export default {
   name: 'Home',
-  components: {menuVue, carousel},
+  components: { carousel},
   data(){
     return{
       recommendations: '',
