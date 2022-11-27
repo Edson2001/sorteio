@@ -1,9 +1,7 @@
 <template>
   <div id="app" >
 
-    <div class="top">
-
-    </div>
+    <div class="top"></div>
 
     <div class="container">
       
@@ -62,7 +60,7 @@
 </template>
 
 <script>
-import '../assets/css/home.css'
+
 import carousel from '../components/carousel.vue'
 import movie from '../services/movie'
 

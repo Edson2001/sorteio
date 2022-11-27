@@ -29,7 +29,8 @@
 
 <script>
 
-import '../assets/css/query.css'
+import '../assets/scss/query.scss'
+
 import movie from "../services/movie"
 
 export default {
