@@ -17,7 +17,7 @@ const routes =   [
     {
         path: '/query',
         component: ()=> import('../views/Query.vue'),
-        meta: {layout: 'otherLayout'}
+        meta: {layout: 'defaultLayut'}
     },
     {
         path: '/find/:id',
