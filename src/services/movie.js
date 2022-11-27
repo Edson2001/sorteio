@@ -1,6 +1,7 @@
 import api from "../plugins/axios"
 
-const api_key = process.env.VUE_APP_API_KEY
+const api_key = import.meta.env.VITE_API_KEY
+
 export default {
     async list(){
        try{

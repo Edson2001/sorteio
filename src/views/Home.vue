@@ -64,7 +64,7 @@
 <script>
 import '../assets/css/home.css'
 import carousel from '../components/carousel.vue'
-import {list} from '../services/movie'
+import movie from '../services/movie'
 
 export default {
   name: 'Home',
@@ -77,11 +77,11 @@ export default {
   },
   methods:{
     url_carousel(position){
-      return  'https://api.themoviedb.org/'+position+'/list/3?page=1&api_key='+process.env.VUE_APP_API_KEY
+      return  'https://api.themoviedb.org/'+position+'/list/3?page=1&api_key='+import.meta.env.VITE_API_KEY
     }
   },
   async mounted(){
-    const response = await list()
+    const response = await movie.list()
     this.recommendations = response.results
     for(let i = 0; i < 5; i++){
       if(this.recommendations[i]){

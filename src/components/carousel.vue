@@ -39,7 +39,6 @@ export default {
        scrollAmount: 0,
        title: '',
        info: ''
-       //urlQuery: 'https://api.themoviedb.org/3/search/movie?api_key=5a1939e7ee4fd5d2be953c58f1787222&language=en-US&query=The%20Batman&page=1&include_adult=true'
     }
   },
 
@@ -102,35 +101,6 @@ export default {
     this.scrollPerClick = document.querySelector(".img-1").clientWidth + 20;
 
   }
-
-
-
-    /*async  showMoviesData() {
-   
-      var result = await axios.get(
-        this.url
-      );
-
-      result = result.data.results;
-      
-
-      result.map( (cur, index) => {
-      
-        document.querySelector(".c"+this.typeDocument).insertAdjacentHTML(
-          "beforeend",
-          ` <div class="">
-              <router-link to="/find?id=${cur.id}">
-                <img class="img-${index} slider-img" src="http://image.tmdb.org/t/p/w185/${cur.poster_path}" />
-              </router-link >
-            </div>
-          `
-        );
-
-      });
-
-      this.scrollPerClick = document.querySelector(".img-1").clientWidth + 20;
-    }*/
-
   }
 }
 </script>

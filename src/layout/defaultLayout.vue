@@ -1,14 +1,14 @@
 <template>
     <div>
-        <MenuVue />
+        <!-- <menu-vue /> -->
         <slot></slot>
     </div>
 </template>
 
 <script>
-import MenuVue from "../components/menu.vue"
+/* import MenuVue from "../components/menu.vue" */
 export default{
     name: 'defaultLayout',
-    components: {MenuVue: MenuVue}
+   /*  components: {MenuVue: MenuVue} */
 }
 </script>
