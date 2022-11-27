@@ -20,12 +20,12 @@
                             <i class="icofont-search"></i>
                         </router-link>
                     </li>
-                    <li>
+                     <li>
                         <router-link to="/">
-                            <img src="https://avatars.githubusercontent.com/u/39365797?s=460&u=4ebebc0bce1839222a2ce180b0b4aa0e13d45b1a&v=4" alt="" srcset="">
+                            <img src="https://avatars.githubusercontent.com/u/39365797?s=460&u=4ebebc0bce1839222a2ce180b0b4aa0e13d45b1a&v=4" alt="" >
                             <span>Dos Santos</span>
                         </router-link>
-                    </li>
+                    </li> 
                 </ul>
             </nav>
         </div>
@@ -33,10 +33,9 @@
 </template>
 
 <script>
-
 import '../assets/css/menu.css'
 
 export default {
-    name: "MenuVue"
+    name: "menuVue"
 }
 </script>

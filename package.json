@@ -2,6 +2,7 @@
   "name": "collflix",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -10,7 +11,6 @@
   "dependencies": {
     "@vitejs/plugin-vue": "^1.6.1",
     "axios": "^0.21.1",
-    "core-js": "^3.6.5",
     "swiper": "^6.4.11",
     "vite": "^2.5.4",
     "vite-plugin-vue2": "1.9.0",
@@ -25,15 +25,13 @@
   "eslintConfig": {
     "root": true,
     "env": {
-      "node": true
+      "es2021": true
     },
     "extends": [
       "plugin:vue/essential",
       "eslint:recommended"
     ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
+   
     "rules": {}
   },
   "browserslist": [
