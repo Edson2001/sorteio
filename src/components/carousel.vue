@@ -23,7 +23,7 @@
 </template>
 <script>
 import axios from 'axios'
-import '../assets/css/carousel.css'
+import '../assets/scss/carousel.scss'
 
 
 export default {

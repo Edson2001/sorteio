@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import '../assets/css/menu.css'
+import '../assets/scss/menu.scss'
 
 export default {
     name: "menuVue"
