@@ -33,7 +33,9 @@
 </template>
 
 <script>
+
 import '../assets/css/menu.css'
+
 export default {
     name: "MenuVue"
 }

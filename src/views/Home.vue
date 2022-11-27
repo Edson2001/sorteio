@@ -7,8 +7,8 @@
 
     <div class="container">
       
-      <carousel :typeDocument="1"  :url='"https://api.themoviedb.org/4/list/3?page=1&api_key=5a1939e7ee4fd5d2be953c58f1787222"' :description="'DC FILMES'"></carousel>
-      <carousel :typeDocument="2"  :url='"https://api.themoviedb.org/4/list/1?page=1&api_key=5a1939e7ee4fd5d2be953c58f1787222"' :description="'Marvel FILMES'"></carousel>
+      <carousel :typeDocument="1"  :url='url_carousel(3)' :description="'DC FILMES'"></carousel>
+      <carousel :typeDocument="2"  :url='url_carousel(1)' :description="'Marvel FILMES'"></carousel>
       
 
       <div class="other">
@@ -29,20 +29,20 @@
           <div class="recomendados">
             
 
-              <div v-for="(item, index) in movie" :key="index" class="item-re ">
-                <router-link :to="'/find?id='+item.id">
-                  <img :src="'http://image.tmdb.org/t/p/w185//'+item.poster_path" alt="" class="item-poster">
-                  <div class="info">
-                    <h6>{{item.title}}</h6>
-                    <div>
-                      <span>{{item.vote_average}}</span>
-                    </div>
+            <div v-for="(item, index) in movie" :key="index" class="item-re ">
+              <router-link :to="'/find?id='+item.id">
+                <img :src="'http://image.tmdb.org/t/p/w185//'+item.poster_path" alt="" class="item-poster">
+                <div class="info">
+                  <h6>{{item.title}}</h6>
+                  <div>
+                    <span>{{item.vote_average}}</span>
                   </div>
-                </router-link>
-              </div>    
+                </div>
+              </router-link>
+            </div>    
 
             
-                   
+             
           </div>
 
         </div>
@@ -64,8 +64,7 @@
 <script>
 import '../assets/css/home.css'
 import carousel from '../components/carousel.vue'
-
-import axios from 'axios'
+import movie from '../services/movie'
 
 export default {
   name: 'Home',
@@ -76,28 +75,20 @@ export default {
       movie: [],
     }
   },
-
-  mounted(){
-    this.getrecommendations()
-  },
-
   methods:{
-    getrecommendations(){
-      axios.get('https://api.themoviedb.org/4/list/8?page=1&api_key=5a1939e7ee4fd5d2be953c58f1787222')
-      .then(response=>{
-        this.recommendations = response.data.results
-        
-        this.movie.push(this.recommendations[0]) 
-        this.movie.push(this.recommendations[1]) 
-        this.movie.push(this.recommendations[2]) 
-        this.movie.push(this.recommendations[3]) 
-        this.movie.push(this.recommendations[4]) 
-     
-        
-      })
+    url_carousel(position){
+      return  'https://api.themoviedb.org/'+position+'/list/3?page=1&api_key='+import.meta.env.VITE_API_KEY
     }
-  }
-  
+  },
+  async mounted(){
+    const response = await movie.list()
+    this.recommendations = response.results
+    for(let i = 0; i < 5; i++){
+      if(this.recommendations[i]){
+        this.movie.push(this.recommendations[i]) 
+      }
+    }
+  },
 }
 </script>
 
