@@ -4,12 +4,24 @@
     <div class="top"></div>
 
     <div class="container">
+
+      <!-- <h3 class="movieSectionTitle">#Filmes novos</h3>
+      <div class="list">
+
+      </div>
+
+      <h3 class="movieSectionTitle">#Outros filmes</h3>
+      <div class="list">
+        <img src="http://image.tmdb.org/t/p/w185//sv1xJUazXeYqALzczSZ3O6nkH75.jpg" alt="">
+      </div>
+ -->
+
       
-      <carousel :typeDocument="1"  :url='url_carousel(3)' :description="'DC FILMES'"></carousel>
-      <carousel :typeDocument="2"  :url='url_carousel(1)' :description="'Marvel FILMES'"></carousel>
+     <!--  <carousel :typeDocument="1"  :url='url_carousel(3)' :description="'DC FILMES'"></carousel>
+      <carousel :typeDocument="2"  :url='url_carousel(1)' :description="'Marvel FILMES'"></carousel> -->
       
 
-      <div class="other">
+      <!-- <div class="other">
         <div class="main main-home">
           <carousel :typeDocument="3"  :url='"https://api.themoviedb.org/3/trending/all/week?api_key=5a1939e7ee4fd5d2be953c58f1787222"' :description="'Em alta'"></carousel>
           <carousel :typeDocument="4"  :url='"https://api.themoviedb.org/4/list/4?page=1&api_key=5a1939e7ee4fd5d2be953c58f1787222"' :description="'Outros'"></carousel>
@@ -38,35 +50,25 @@
                 </div>
               </router-link>
             </div>    
-
-            
-             
           </div>
 
         </div>
-      </div>
-
-      
-
+      </div> -->
     </div>
-
-    <footer>
-      <b> <a href="https://github.com/Edson2001/collflix">CollFlix</a> - 2021 | DADOS DE FILMES:  <a href="https://www.themoviedb.org/">TMDB</a> </b>
-      <p>Criado por <a href="https://github.com/Edson2001">Edson Dos Santos Bandola</a> </p>
-
-    </footer>
     
+    <footerVueVue />
   </div>
 </template>
 
 <script>
 
-import carousel from '../components/carousel.vue'
+//import carousel from '../components/carousel.vue'
 import movie from '../services/movie'
+import footerVueVue from '../layout/footerVue.vue'
 
 export default {
   name: 'Home',
-  components: { carousel},
+  components: {footerVueVue},
   data(){
     return{
       recommendations: '',
@@ -75,11 +77,12 @@ export default {
   },
   methods:{
     url_carousel(position){
-      return  'https://api.themoviedb.org/'+position+'/list/3?page=1&api_key='+import.meta.env.VITE_API_KEY
+      return 'https://api.themoviedb.org/'+position+'/list/3?page=1&api_key='+import.meta.env.VITE_API_KEY
     }
   },
   async mounted(){
     const response = await movie.list()
+    console.log(response)
     this.recommendations = response.results
     for(let i = 0; i < 5; i++){
       if(this.recommendations[i]){

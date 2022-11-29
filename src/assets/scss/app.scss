@@ -45,7 +45,6 @@ body {
     width: 60% !important;
     margin-top: 102px;
 }
-
 .item-re{
     display: flex;
     color: #fff;
@@ -72,4 +71,12 @@ footer{
     padding: 20px;
     border-top: 2px solid #333130;
     box-shadow: 0 2px 2px 0 #333130;
+}
+.movieSectionTitle{
+    display: block;
+    color: white;
+    text-indent: 10px;
+    margin-top: 12px;
+    font-weight: 800;
+    font-family: 'Roboto';
 }
