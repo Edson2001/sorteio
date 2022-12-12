@@ -26,7 +26,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: cd sorteio-frontEnd
-    - run: |
+    - run: | 
+            cd sorteio-frontEnd
             npm run test
             npm run build
