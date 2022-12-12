@@ -12,11 +12,10 @@
     "@splidejs/vue-splide": "^0.6.12",
     "@vitejs/plugin-vue": "^1.6.1",
     "axios": "^0.21.1",
-    "swiper": "^6.4.11",
     "vite": "^2.5.4",
     "vite-plugin-vue2": "1.9.0",
     "vue": "^2.6.11",
-    "vue-router": "^3.5.1"
+    "vue-template-compiler": "^2.7.14"
   },
   "devDependencies": {
     "cz-conventional-changelog": "^3.3.0",
